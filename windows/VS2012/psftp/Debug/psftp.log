@@ -1,0 +1,76 @@
+﻿  x11fwd.c
+..\..\..\x11fwd.c(423): warning C4244: '함수': 'time_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  wintime.c
+  winstore.c
+  winshare.c
+..\..\winshare.c(157): warning C4013: 'make_private_security_descriptor'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+  winsftp.c
+  winsecur.c
+  winproxy.c
+  winpgntc.c
+  winnps.c
+  winnpc.c
+  winnojmp.c
+  winnoise.c
+  winnet.c
+  winmisc.c
+..\..\winmisc.c(154): warning C4996: 'GetVersionExA': deprecated로 선언되었습니다.
+  C:\Program Files (x86)\Windows Kits\8.1\Include\um\sysinfoapi.h(433): note: 'GetVersionExA' 선언을 참조하십시오.
+  winhsock.c
+  winhandl.c
+  wingss.c
+  windefs.c
+  wincons.c
+  wincapi.c
+  코드를 생성하고 있습니다...
+c:\users\중근\documents\visual studio 2015\projects\putty-src\x11fwd.c(937): warning C4700: 초기화되지 않은 'socketdatalen' 지역 변수를 사용했습니다.
+  컴파일하고 있습니다...
+  wildcard.c
+  version.c
+  tree234.c
+  timing.c
+  sshzlib.c
+  sshshare.c
+  sshsha.c
+  sshsh512.c
+  sshsh256.c
+  sshrsa.c
+  sshrand.c
+  sshpubk.c
+  sshmd5.c
+  sshgssc.c
+  sshdss.c
+  sshdh.c
+  sshdes.c
+  sshcrcda.c
+  sshcrc.c
+  sshbn.c
+..\..\..\sshbn.c(527): warning C4018: '<=': signed 또는 unsigned가 일치하지 않습니다.
+  코드를 생성하고 있습니다...
+  컴파일하고 있습니다...
+  sshblowf.c
+  ssharcf.c
+  sshaes.c
+  ssh.c
+..\..\..\ssh.c(10882): warning C4018: '>': signed 또는 unsigned가 일치하지 않습니다.
+  sftp.c
+  settings.c
+  psftp.c
+  proxy.c
+..\..\..\proxy.c(1074): warning C4267: '=': 'size_t'에서 'char'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  portfwd.c
+  pinger.c
+..\..\..\pinger.c(40): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  pgssapi.c
+  misc.c
+..\..\..\misc.c(1011): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  logging.c
+  int64.c
+  errsock.c
+  cproxy.c
+  conf.c
+  cmdline.c
+  callback.c
+  be_ssh.c
+  코드를 생성하고 있습니다...
+  psftp.vcxproj -> C:\Users\중근\Documents\Visual Studio 2015\Projects\putty-src\windows\VS2012\psftp\.\Debug\psftp.exe

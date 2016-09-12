@@ -1,0 +1,26 @@
+﻿  winutils.c
+  winsecur.c
+  winpgntc.c
+  winpgnt.c
+  winmisc.c
+..\..\winmisc.c(154): warning C4996: 'GetVersionExA': deprecated로 선언되었습니다.
+  C:\Program Files (x86)\Windows Kits\8.1\Include\um\sysinfoapi.h(433): note: 'GetVersionExA' 선언을 참조하십시오.
+  winhelp.c
+  version.c
+  tree234.c
+  sshsha.c
+  sshsh512.c
+  sshsh256.c
+  sshrsa.c
+  sshpubk.c
+  sshmd5.c
+  sshdss.c
+  sshdes.c
+  sshbn.c
+..\..\..\sshbn.c(527): warning C4018: '<=': signed 또는 unsigned가 일치하지 않습니다.
+  sshaes.c
+  misc.c
+..\..\..\misc.c(1011): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  conf.c
+  코드를 생성하고 있습니다...
+  pageant.vcxproj -> C:\Users\중근\Documents\Visual Studio 2015\Projects\putty-src\windows\VS2012\pageant\.\Debug\pageant.exe

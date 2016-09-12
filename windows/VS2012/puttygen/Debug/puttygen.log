@@ -1,0 +1,38 @@
+﻿  winutils.c
+  wintime.c
+  winstore.c
+  winpgen.c
+  winnojmp.c
+  winnoise.c
+  winmisc.c
+..\..\winmisc.c(154): warning C4996: 'GetVersionExA': deprecated로 선언되었습니다.
+  C:\Program Files (x86)\Windows Kits\8.1\Include\um\sysinfoapi.h(433): note: 'GetVersionExA' 선언을 참조하십시오.
+  winhelp.c
+  winctrls.c
+  version.c
+  tree234.c
+  sshsha.c
+  sshsh512.c
+  sshsh256.c
+  sshrsag.c
+  sshrsa.c
+  sshrand.c
+  sshpubk.c
+  sshprime.c
+  sshmd5.c
+  코드를 생성하고 있습니다...
+  컴파일하고 있습니다...
+  sshdssg.c
+  sshdss.c
+  sshdes.c
+  sshbn.c
+..\..\..\sshbn.c(527): warning C4018: '<=': signed 또는 unsigned가 일치하지 않습니다.
+  sshaes.c
+  notiming.c
+  misc.c
+..\..\..\misc.c(1011): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  import.c
+..\..\..\import.c(1275): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  conf.c
+  코드를 생성하고 있습니다...
+  puttygen.vcxproj -> C:\Users\중근\Documents\Visual Studio 2015\Projects\putty-src\windows\VS2012\puttygen\.\Debug\puttygen.exe

@@ -1,0 +1,83 @@
+﻿  winutils.c
+  winucs.c
+  wintime.c
+  winstore.c
+  winser.c
+  winsecur.c
+  winproxy.c
+  winprint.c
+  winnet.c
+  winmisc.c
+..\..\winmisc.c(154): warning C4996: 'GetVersionExA': deprecated로 선언되었습니다.
+  C:\Program Files (x86)\Windows Kits\8.1\Include\um\sysinfoapi.h(433): note: 'GetVersionExA' 선언을 참조하십시오.
+  winjump.c
+  winhsock.c
+  winhelp.c
+  winhandl.c
+  window.c
+C:\Program Files (x86)\Windows Kits\8.1\Include\um\multimon.h(185): warning C4996: 'GetVersionExA': deprecated로 선언되었습니다.
+  C:\Program Files (x86)\Windows Kits\8.1\Include\um\sysinfoapi.h(433): note: 'GetVersionExA' 선언을 참조하십시오.
+  windlg.c
+  windefs.c
+  winctrls.c
+  wincfg.c
+  sizetip.c
+  코드를 생성하고 있습니다...
+  컴파일하고 있습니다...
+  wcwidth.c
+  version.c
+  tree234.c
+  timing.c
+  terminal.c
+..\..\..\terminal.c(3524): warning C4018: '>': signed 또는 unsigned가 일치하지 않습니다.
+..\..\..\terminal.c(3533): warning C4018: '>': signed 또는 unsigned가 일치하지 않습니다.
+..\..\..\terminal.c(3549): warning C4018: '>': signed 또는 unsigned가 일치하지 않습니다.
+..\..\..\terminal.c(3555): warning C4018: '>': signed 또는 unsigned가 일치하지 않습니다.
+..\..\..\terminal.c(3562): warning C4018: '>': signed 또는 unsigned가 일치하지 않습니다.
+..\..\..\terminal.c(3569): warning C4018: '>': signed 또는 unsigned가 일치하지 않습니다.
+..\..\..\terminal.c(3577): warning C4018: '>': signed 또는 unsigned가 일치하지 않습니다.
+..\..\..\terminal.c(3584): warning C4018: '>': signed 또는 unsigned가 일치하지 않습니다.
+..\..\..\terminal.c(3595): warning C4018: '>': signed 또는 unsigned가 일치하지 않습니다.
+..\..\..\terminal.c(3596): warning C4018: '>': signed 또는 unsigned가 일치하지 않습니다.
+..\..\..\terminal.c(3632): warning C4018: '>': signed 또는 unsigned가 일치하지 않습니다.
+..\..\..\terminal.c(3635): warning C4146: 단항 빼기 연산자가 부호 없는 형식에 적용되었습니다. 결과는 역시 unsigned입니다.
+..\..\..\terminal.c(3640): warning C4018: '>': signed 또는 unsigned가 일치하지 않습니다.
+..\..\..\terminal.c(3650): warning C4018: '>': signed 또는 unsigned가 일치하지 않습니다.
+..\..\..\terminal.c(3656): warning C4018: '>': signed 또는 unsigned가 일치하지 않습니다.
+..\..\..\terminal.c(3657): warning C4146: 단항 빼기 연산자가 부호 없는 형식에 적용되었습니다. 결과는 역시 unsigned입니다.
+..\..\..\terminal.c(3734): warning C4018: '>': signed 또는 unsigned가 일치하지 않습니다.
+..\..\..\terminal.c(3735): warning C4018: '>': signed 또는 unsigned가 일치하지 않습니다.
+..\..\..\terminal.c(4090): warning C4018: '>': signed 또는 unsigned가 일치하지 않습니다.
+..\..\..\terminal.c(4098): warning C4018: '>': signed 또는 unsigned가 일치하지 않습니다.
+..\..\..\terminal.c(4101): warning C4146: 단항 빼기 연산자가 부호 없는 형식에 적용되었습니다. 결과는 역시 unsigned입니다.
+..\..\..\terminal.c(4141): warning C4018: '>': signed 또는 unsigned가 일치하지 않습니다.
+..\..\..\terminal.c(4175): warning C4018: '>': signed 또는 unsigned가 일치하지 않습니다.
+  telnet.c
+  settings.c
+  sercfg.c
+  rlogin.c
+  raw.c
+  proxy.c
+..\..\..\proxy.c(1074): warning C4267: '=': 'size_t'에서 'char'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  pinger.c
+..\..\..\pinger.c(40): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  nogss.c
+  nocproxy.c
+  miscucs.c
+  misc.c
+..\..\..\misc.c(1011): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  minibidi.c
+  logging.c
+  ldiscucs.c
+  ldisc.c
+  코드를 생성하고 있습니다...
+  컴파일하고 있습니다...
+  errsock.c
+  dialog.c
+  config.c
+  conf.c
+  cmdline.c
+  callback.c
+  be_nos_s.c
+  코드를 생성하고 있습니다...
+  puttytel.vcxproj -> C:\Users\중근\Documents\Visual Studio 2015\Projects\putty-src\windows\VS2012\puttytel\.\Debug\puttytel.exe
