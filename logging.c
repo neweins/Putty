@@ -81,13 +81,11 @@ static void logwrite(struct LogContext *ctx, void *data, int len)
 		}
 
 		//added by [JKLEE20160912] : write timestamp one line
-		if (!strcmp(data, "\r")) {
-			if (!strcmp(data, "\n")) {
-				char *strtime = mctimelocal();
-				fwrite("[", 1, 1, ctx->lgfp);
-				fwrite((void*)strtime, 1, strlen(strtime), ctx->lgfp);
-				fwrite("]", 1, 1, ctx->lgfp);
-			}
+		if (!strcmp(data, "\n")) {
+			char *strtime = mctimelocal();
+			fwrite("[", 1, 1, ctx->lgfp);
+			fwrite((void*)strtime, 1, strlen(strtime), ctx->lgfp);
+			fwrite("]", 1, 1, ctx->lgfp);
 		}
 
 
