@@ -2759,8 +2759,10 @@ static void term_out(Terminal *term)
 	     * Optionally log the session traffic to a file. Useful for
 	     * debugging and possibly also useful for actual logging.
 	     */
-	    if (term->logtype == LGTYP_DEBUG && term->logctx)
-			logtraffic(term->logctx, (unsigned char) c, LGTYP_DEBUG);	//comment by [JKLEE20160912] 파일 open 여기서 한다. 
+		if (term->logtype == LGTYP_DEBUG && term->logctx) {
+
+			logtraffic(term->logctx, (unsigned char)c, LGTYP_DEBUG);	//comment by [JKLEE20160912] 파일 open 여기서 한다. 
+		}
 	} else {
 	    c = unget;
 	    unget = -1;

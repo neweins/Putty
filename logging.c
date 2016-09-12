@@ -22,8 +22,33 @@ struct LogContext {
     int logtype;		       /* cached out of conf */
 };
 
-static Filename *xlatlognam(Filename *s, char *hostname, int port,
-                            struct tm *tm);
+static Filename *xlatlognam(Filename *s, char *hostname, int port, struct tm *tm);
+
+
+// add by [JKLEE20160912] : the local time function for logging with timestamp 
+char *mctimelocal()
+{
+	SYSTEMTIME LocalTime;
+	static char strtime[29];
+	char week[][4] = { "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" };
+	char month[][4] = { "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+		"Jul", "Aug", "Sep", "Oct", "Nov", "Dec" };
+
+	GetLocalTime(&LocalTime);
+	_snprintf_s(strtime, sizeof(strtime), _TRUNCATE,
+		"%04d %s %s %02d %02d:%02d:%02d.%03d",
+		LocalTime.wYear,
+		week[LocalTime.wDayOfWeek],
+		month[LocalTime.wMonth - 1],
+		LocalTime.wDay,
+		LocalTime.wHour,
+		LocalTime.wMinute,
+		LocalTime.wSecond,
+		LocalTime.wMilliseconds);
+
+	return strtime;
+}
+
 
 /*
  * Internal wrapper function which must be called for _all_ output
@@ -44,9 +69,10 @@ static void logwrite(struct LogContext *ctx, void *data, int len)
     if (ctx->state == L_OPENING) {
 		bufchain_add(&ctx->queue, data, len);
     }
-	else if (ctx->state == L_OPEN) {
+	else if (ctx->state == L_OPEN) {	// comment by [JKLEE20160912] If the log file is opened, it's ready to write
 		assert(ctx->lgfp);
-		if (fwrite(data, 1, len, ctx->lgfp) < (size_t)len) {
+			
+		if (fwrite(data, 1, len, ctx->lgfp) < (size_t)len) {	// comment by [JKLEE20160912] : Actually, write one byte here 
 			logfclose(ctx);
 			ctx->state = L_ERROR;
 			/* Log state is L_ERROR so this won't cause a loop */
@@ -54,6 +80,15 @@ static void logwrite(struct LogContext *ctx, void *data, int len)
 				 "Disabled writing session log due to error while writing");
 		}
 
+		//added by [JKLEE20160912] : write timestamp one line
+		if (!strcmp(data, "\r")) {
+			if (!strcmp(data, "\n")) {
+				char *strtime = mctimelocal();
+				fwrite("[", 1, 1, ctx->lgfp);
+				fwrite((void*)strtime, 1, strlen(strtime), ctx->lgfp);
+				fwrite("]", 1, 1, ctx->lgfp);
+			}
+		}
 
 
     }				       /* else L_ERROR, so ignore the write */
@@ -85,31 +120,6 @@ void logflush(void *handle) {
 	if (ctx->state == L_OPEN)
 	    fflush(ctx->lgfp);
 }
-
-
-char *mctimelocal()
-{
-	SYSTEMTIME LocalTime;
-	static char strtime[29];
-	char week[][4] = { "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" };
-	char month[][4] = { "Jan", "Feb", "Mar", "Apr", "May", "Jun",
-		"Jul", "Aug", "Sep", "Oct", "Nov", "Dec" };
-
-	GetLocalTime(&LocalTime);
-	_snprintf_s(strtime, sizeof(strtime), _TRUNCATE,
-		"%s %s %02d %02d:%02d:%02d.%03d %04d",
-		week[LocalTime.wDayOfWeek],
-		month[LocalTime.wMonth - 1],
-		LocalTime.wDay,
-		LocalTime.wHour,
-		LocalTime.wMinute,
-		LocalTime.wSecond,
-		LocalTime.wMilliseconds,
-		LocalTime.wYear);
-
-	return strtime;
-}
-
 
 /*
 struct LogContext {
@@ -192,6 +202,7 @@ static void logfopen_callback(void *handle, int mode)
      * we should write any queued data out.
      */
     assert(ctx->state != L_OPENING);   /* make _sure_ it won't be requeued */
+
     while (bufchain_size(&ctx->queue)) {
 		void *data;
 		int len;
@@ -267,9 +278,8 @@ void logtraffic(void *handle, unsigned char c, int logmode)
 {
     struct LogContext *ctx = (struct LogContext *)handle;
     if (ctx->logtype > 0) {
-	if (ctx->logtype == logmode)
-		
-	    logwrite(ctx, &c, 1);
+		if (ctx->logtype == logmode)
+			logwrite(ctx, &c, 1);
     }
 }
 
@@ -410,7 +420,6 @@ void log_packet(void *handle, int direction, int type,
 	if (((p % 16) == 0) || (p == len) || omitted) {
 	    if (output_pos) {
 		strcpy(dumpdata + 10+1+3*16+2+output_pos, "\r\n");
-		//fwrite((void*)"debug >>>>>>1", 1, 13, ctx->lgfp);
 		logwrite(ctx, dumpdata, strlen(dumpdata));
 		output_pos = 0;
 	    }
